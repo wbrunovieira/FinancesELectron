@@ -4,8 +4,8 @@
   "main": "dist/main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "tsc && npm run build-css && electron .",
-    "build-css": "postcss src/styles.css -o dist/styles.css"
+    "dev": "tsc && npx postcss src/styles.css -o dist/styles.css --watch & electron .",
+    "build-css": "npx postcss src/styles.css -o dist/styles.css"
   },
   "devDependencies": {
     "@types/electron": "^1.4.38",
