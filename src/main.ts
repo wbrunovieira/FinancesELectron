@@ -1,4 +1,9 @@
 import { app, BrowserWindow } from 'electron';
+require('electron-reload')(__dirname, {
+  electron: require(`${__dirname}/../node_modules/electron`),
+  files: ['src/**/*.{js,html,css}'],
+  hardResetMethod: 'exit',
+});
 
 function createWindow() {
   const win = new BrowserWindow({

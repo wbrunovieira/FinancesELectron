@@ -4,7 +4,8 @@
   "main": "dist/main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "tsc && npx postcss src/styles.css -o dist/styles.css --watch & electron .",
+    "dev": "tsc --watch & npx postcss src/styles.css -o dist/styles.css --watch & electron ."
+,
     "build-css": "npx postcss src/styles.css -o dist/styles.css"
   },
   "devDependencies": {
@@ -12,6 +13,7 @@
     "@types/node": "^22.10.1",
     "autoprefixer": "^10.4.20",
     "electron": "^33.2.1",
+    "electron-reload": "2.0.0-alpha.1",
     "postcss": "^8.4.49",
     "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.4.16",
