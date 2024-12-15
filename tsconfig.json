@@ -2,14 +2,13 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "CommonJS",
+    "outDir": "./dist",
+      "rootDir": "./src", 
     "strict": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist", // Arquivos de saída vão para dist/
-    "rootDir": "./src", // O TypeScript começa a partir de src/
     "moduleResolution": "Node",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx" 
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

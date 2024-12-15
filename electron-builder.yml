@@ -1,0 +1,48 @@
+# Nome da aplicação
+productName: Finanças Electron
+
+# Pasta de onde será copiado o build do Electron
+directories:
+  app: .
+  output: dist/electron-build
+
+# Configuração de build para diferentes plataformas
+files:
+  - dist/web/**/* # Inclui o Vite buildado
+  - dist/main.js # Inclui o arquivo principal do Electron
+  - package.json # Necessário para identificar o app Electron
+  - '!node_modules/**/*' # Exclui os arquivos node_modules
+
+win:
+  icon: assets/icons/icon.ico
+  target:
+    - nsis
+    - portable
+  artifactName: 'FinancasElectron-Setup-${version}.exe'
+
+nsis:
+  oneClick: false
+  perMachine: true
+  allowToChangeInstallationDirectory: true
+
+mac:
+  category: public.app-category.finance
+  icon: assets/icons/icon.icns
+  target:
+    - dmg
+    - zip
+  artifactName: 'FinancasElectron-${version}.dmg'
+
+linux:
+  icon: assets/icons/
+  category: Utility
+  target:
+    - AppImage
+    - deb
+    - rpm
+  artifactName: 'FinancasElectron-${version}.${ext}'
+
+publish:
+  provider: github
+  owner: 'seu-usuario'
+  repo: 'nome-do-repositorio'
